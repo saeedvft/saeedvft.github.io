@@ -20,7 +20,7 @@ pagination.pagerSize = 10
   description = "Personal tech blog"
   keywords    = "embedded linux, yocto, secure boot, op-tee"
 
-  customCSS = ["/css/custom.css"]
+  customCSS = ["/css/custom.css", "/css/blog.css"]
   customJS  = ["/js/copy-code.js", "/js/motion.js"]
 
   [params.portrait]

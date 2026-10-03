@@ -1,0 +1,71 @@
+/* Midnight on the main-page base color (#2e3440) */
+@@ {
+  --background:#2e3440; --color:#d8dee9; --accent:#a3be8c; --border-color:#434c5e;
+  color:#d8dee9;
+  background:
+    radial-gradient(1100px 560px at 8% -10%, rgba(163,190,140,.16) 0%, transparent 60%),
+    radial-gradient(900px 480px at 100% 0, rgba(129,161,193,.09) 0%, transparent 55%),
+    #2e3440;
+  background-attachment:fixed;
+}
+@@ main.post { --muted:#9aa5b8; --line:#434c5e; --surface:rgba(255,255,255,.045); max-width:900px; margin:2rem auto 0; }
+@@ main.post, @@ main.post * { font-family:"JetBrains Mono",ui-monospace,monospace !important; }
+@@ main.post :is(pre, code, pre *, code *) { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace !important; }
+
+@@ main.post .post-title { margin:1rem 0 1rem; font-size:2.9rem; line-height:1.1; font-weight:800; letter-spacing:-.03em; }
+@@ main.post .post-title::after { content:none; }
+@@ main.post .post-title a { color:transparent; background:linear-gradient(90deg,#fff 0%,#a3be8c 60%,#8fbcbb 100%); -webkit-background-clip:text; background-clip:text; text-decoration:none; border-bottom:0; }
+@@ .post-excerpt { margin:0 0 2.2rem; font-size:1.15rem; line-height:1.6; color:var(--muted); }
+
+@@ .post-content { font-size:1.05rem; line-height:1.8; color:#d8dee9; }
+@@ .post-content p { margin:0 0 1.3rem; }
+@@ .post-content a { color:#a3be8c; text-underline-offset:3px; text-decoration-thickness:1px; }
+@@ .post-content a:hover { color:#8fbcbb; }
+
+@@ .post-content h2 { margin:3rem 0 1rem; font-size:1.6rem; font-weight:700; color:#eceff4; border:0; }
+@@ .post-content h2::before { content:""; display:inline-block; width:.35rem; height:1.05em; margin-right:.7rem; vertical-align:-.15em; background:linear-gradient(#a3be8c, #8fbcbb); border-radius:3px; }
+@@ .post-content h3 { margin:2.2rem 0 .6rem; font-size:1.2rem; color:#c5cde0; }
+@@ .post-content h3::before { content:none; }
+
+@@ .toc { margin:0 0 2.5rem; padding:1.1rem 1.5rem; background:rgba(255,255,255,.045); border:1px solid #434c5e; border-radius:14px; backdrop-filter:blur(8px); font-size:.92rem; }
+@@ .toc::before { content:"In this post"; display:block; margin-bottom:.5rem; font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#a3be8c; }
+@@ .toc ul { margin:0; padding-left:1.1rem; }
+@@ .toc a { text-decoration:none; color:#d8dee9; }
+@@ .toc a:hover { text-decoration:underline; color:#fff; }
+
+@@ .post-content blockquote { margin:1.8rem 0; padding:1.2rem 1.5rem; background:linear-gradient(135deg, rgba(163,190,140,.14), rgba(129,161,193,.05)); border:1px solid #434c5e; border-radius:14px; color:#eceff4; font-style:normal; }
+@@ .post-content blockquote::before { content:none; }
+@@ .post-content blockquote p { margin:0; }
+
+@@ .post-content pre { margin:1.7rem 0; padding:1.2rem 1.4rem; background:#242933 !important; border:1px solid #434c5e; border-radius:14px; box-shadow:0 0 0 1px rgba(163,190,140,.08), 0 20px 50px rgba(0,0,0,.35); font-size:.86rem; line-height:1.65; }
+@@ .post-content pre code { padding:0; background:none; border:0; }
+@@ .post-content :not(pre) > code { padding:.12em .45em; background:rgba(163,190,140,.16); border:0; border-radius:6px; color:#b6dce6; font-size:.86em; }
+
+@@ .post-content table { width:100%; margin:1.7rem 0; border-collapse:separate; border-spacing:0; font-size:.92rem; border:1px solid #434c5e; border-radius:12px; overflow:hidden; }
+@@ .post-content th, @@ .post-content td { padding:.7rem 1rem; border:0; border-bottom:1px solid #434c5e; text-align:left; }
+@@ .post-content th { background:rgba(255,255,255,.06); color:#eceff4; }
+@@ .post-content tr:last-child td { border-bottom:0; }
+
+@@ .post-content ul, @@ .post-content ol { padding-left:1.5rem; }
+@@ .post-content li { margin:.4rem 0; }
+@@ .post-content img { max-width:100%; border:1px solid #434c5e; border-radius:14px; }
+@@ .post-content hr { margin:3rem 0; border:0; height:1px; background:linear-gradient(90deg, transparent, #a3be8c, transparent); }
+
+
+/* code blocks: Prism toolbar (language label) sits INSIDE the block, top-left */
+@@ .post-content .code-toolbar { position:relative; margin:1.7rem 0; }
+@@ .post-content .code-toolbar > pre { margin:0 !important; padding-top:2.5rem; }
+@@ .post-content .code-toolbar > .toolbar {
+  top:.65rem; left:1.4rem; right:auto;
+  opacity:1;
+}
+@@ .post-content .code-toolbar > .toolbar .toolbar-item > span,
+@@ .post-content .code-toolbar > .toolbar .toolbar-item > a,
+@@ .post-content .code-toolbar > .toolbar .toolbar-item > button {
+  padding:0; margin:0;
+  background:none; border:0; box-shadow:none;
+  font-size:.7rem; letter-spacing:.12em; text-transform:uppercase;
+  color:#7b869c;
+}
+/* your own copy button stays top-right */
+@@ .post-content pre .copy-btn { top:.6rem; right:.7rem; }

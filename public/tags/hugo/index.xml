@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Saeed</title>
+    <link>http://localhost:1313/tags/hugo/</link>
+    <description>Recent content in Hugo on Saeed</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Saeed</copyright>
+    <lastBuildDate>Sat, 03 Oct 2026 10:00:00 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>http://localhost:1313/posts/sample2/</link>
+      <pubDate>Sat, 03 Oct 2026 10:00:00 +0200</pubDate>
+      <guid>http://localhost:1313/posts/sample2/</guid>
+      <description>Introduction Write a brief introduction here. Hook the reader and explain what this post will cover.&#xA;Main Section This is where your main content goes. You can use:&#xA;Bold text for emphasis Italic text for subtle emphasis Links to other resources Subsection Add more details here. For example, a code block:&#xA;hugo server -D </description>
+    </item>
+  </channel>
+</rss>

@@ -2,36 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:38391/posts/</loc>
+    <loc>http://localhost:1313/tags/blogging/</loc>
+    <lastmod>2026-10-03T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2026-10-03T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/getting-started/</loc>
+    <lastmod>2026-10-03T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hugo/</loc>
+    <lastmod>2026-10-03T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/sample2/</loc>
+    <lastmod>2026-10-03T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-10-03T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-10-03T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-10-03T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/tutorials/</loc>
+    <lastmod>2026-10-03T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/secure-boot/</loc>
     <lastmod>2026-09-19T12:00:00+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:38391/</loc>
+    <loc>http://localhost:1313/posts/sample-post/</loc>
     <lastmod>2026-09-19T12:00:00+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:38391/tags/secure-boot/</loc>
+    <loc>http://localhost:1313/tags/u-boot/</loc>
     <lastmod>2026-09-19T12:00:00+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:38391/posts/sample-post/</loc>
+    <loc>http://localhost:1313/tags/yocto/</loc>
     <lastmod>2026-09-19T12:00:00+03:00</lastmod>
   </url><url>
-    <loc>http://localhost:38391/tags/</loc>
-    <lastmod>2026-09-19T12:00:00+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:38391/tags/u-boot/</loc>
-    <lastmod>2026-09-19T12:00:00+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:38391/tags/yocto/</loc>
-    <lastmod>2026-09-19T12:00:00+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:38391/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2026-09-19T00:33:06+03:30</lastmod>
   </url><url>
-    <loc>http://localhost:38391/posts/hello-world/</loc>
+    <loc>http://localhost:1313/posts/hello-world/</loc>
     <lastmod>2026-09-19T00:33:01+03:30</lastmod>
   </url><url>
-    <loc>http://localhost:38391/tags/untagged/</loc>
+    <loc>http://localhost:1313/tags/untagged/</loc>
     <lastmod>2026-09-19T00:33:01+03:30</lastmod>
-  </url><url>
-    <loc>http://localhost:38391/categories/</loc>
   </url>
 </urlset>
