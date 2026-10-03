@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38391&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="A sample post to check how code, tables and quotes render." />
+<meta name="keywords" content="embedded linux, yocto, secure boot, op-tee, secure-boot, u-boot, yocto" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:38391/posts/sample-post/" />
+
+
+    <title>
+        
+            Signing a FIT Image for Secure Boot :: Saeed  — Embedded Linux, secure boot, and things I break on dev boards
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.9acb40be0cd10472e74602beaacd5d0f30d54c51308dbfe8095191e6941a3ec3.css" integrity="sha256-mstAvgzRBHLnRgK&#43;qs1dDzDVTFEwjb/oCVGR5pQaPsM=" crossorigin="anonymous">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Signing a FIT Image for Secure Boot">
+<meta itemprop="description" content="A sample post to check how code, tables and quotes render."><meta itemprop="datePublished" content="2026-09-19T12:00:00+03:00" />
+<meta itemprop="dateModified" content="2026-09-19T12:00:00+03:00" />
+<meta itemprop="wordCount" content="265">
+<meta itemprop="keywords" content="secure-boot,u-boot,yocto," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Signing a FIT Image for Secure Boot"/>
+<meta name="twitter:description" content="A sample post to check how code, tables and quotes render."/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2026-09-19 12:00:00 &#43;0300 &#43;0300" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                Saeedvft</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner">
+                <li><a href="/about">About</a></li>
+            
+                <li><a href="/posts">Blog</a></li>
+            
+    </ul>
+</nav>
+
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            
+  <div class="content">
+    <main class="post">
+
+      <div class="post-info">
+        <p>
+
+          
+        </p>
+      </div>
+
+      <article>
+        <h1 class="post-title">
+          <a href="http://localhost:38391/posts/sample-post/">Signing a FIT Image for Secure Boot</a>
+        </h1>
+
+        
+          <div class="post-excerpt">A sample post to check how code, tables and quotes render.</div>
+        
+
+        
+
+        
+
+        <div class="post-content">
+          <nav class="toc"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-sign-the-fit-image">Why sign the FIT image</a></li>
+    <li><a href="#generating-a-key-pair">Generating a key pair</a></li>
+    <li><a href="#describing-the-image">Describing the image</a></li>
+    <li><a href="#building-and-signing">Building and signing</a></li>
+    <li><a href="#what-lives-where">What lives where</a></li>
+    <li><a href="#checklist">Checklist</a></li>
+  </ul>
+</nav></nav>
+
+<h2 id="why-sign-the-fit-image">Why sign the FIT image</h2>
+<p>A FIT image bundles the kernel, device tree and ramdisk into one file. If the bootloader verifies its signature, an attacker can&rsquo;t swap in a modified kernel without the private key.</p>
+<blockquote>
+<p>Secure boot is a chain. One unsigned link and the rest is decoration.</p>
+</blockquote>
+<p>Inline code like <code>mkimage</code>, <code>/dev/mmcblk0p2</code> and <code>CONFIG_FIT_SIGNATURE=y</code> should look distinct from the surrounding text.</p>
+<h2 id="generating-a-key-pair">Generating a key pair</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p keys
+</span></span><span style="display:flex;"><span>openssl genrsa -F4 -out keys/dev.key <span style="color:#ae81ff">2048</span>
+</span></span><span style="display:flex;"><span>openssl req -batch -new -x509 -key keys/dev.key -out keys/dev.crt
+</span></span></code></pre></div><p>Keep <code>dev.key</code> out of git. Add it to <code>.gitignore</code> right away:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;keys/*.key&#34;</span> &gt;&gt; .gitignore
+</span></span></code></pre></div><h2 id="describing-the-image">Describing the image</h2>
+<p>A minimal <code>image.its</code> (addresses are placeholders):</p>
+<pre tabindex="0"><code class="language-dts" data-lang="dts">/dts-v1/;
+
+/ {
+    description = &#34;Signed FIT&#34;;
+
+    images {
+        kernel {
+            data = /incbin/(&#34;Image&#34;);
+            type = &#34;kernel&#34;;
+            arch = &#34;arm64&#34;;
+            os = &#34;linux&#34;;
+            compression = &#34;none&#34;;
+            load = &lt;0x00400000&gt;;
+            entry = &lt;0x00400000&gt;;
+            hash { algo = &#34;sha256&#34;; };
+        };
+    };
+
+    configurations {
+        default = &#34;conf&#34;;
+        conf {
+            kernel = &#34;kernel&#34;;
+            signature {
+                algo = &#34;sha256,rsa2048&#34;;
+                key-name-hint = &#34;dev&#34;;
+                sign-images = &#34;kernel&#34;;
+            };
+        };
+    };
+};
+</code></pre><h2 id="building-and-signing">Building and signing</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkimage -f image.its -K u-boot.dtb -k keys -r image.fit
+</span></span></code></pre></div><h2 id="what-lives-where">What lives where</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Location</th>
+<th>Secret?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Private key</td>
+<td>Build machine / HSM</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Public key</td>
+<td>Bootloader DTB</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Signed FIT image</td>
+<td>Boot partition</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="checklist">Checklist</h2>
+<ul>
+<li>Private key never leaves the signing host</li>
+<li>Public key embedded in the bootloader</li>
+<li>Unsigned images rejected at boot</li>
+<li>Key rotation plan written down</li>
+</ul>
+<ol>
+<li>Sign the image</li>
+<li>Flash it</li>
+<li>Confirm a tampered image fails to boot</li>
+</ol>
+
+        </div>
+      </article>
+
+      <hr />
+
+      <div class="post-info">
+        
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://localhost:38391/tags/secure-boot/">secure-boot</a></span>
+        <span class="tag"><a href="http://localhost:38391/tags/u-boot/">u-boot</a></span>
+        <span class="tag"><a href="http://localhost:38391/tags/yocto/">yocto</a></span>
+        
+    </p>
+
+        
+
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          265 Words
+        </p>
+
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          
+            2026-09-19 12:30
+          
+
+           
+            
+          
+        </p>
+      </div>
+
+      
+    <div class="pagination">
+        
+
+        <div class="pagination__buttons">
+            
+
+            
+            <span class="button next">
+                <a href="http://localhost:38391/posts/hello-world/">
+                    <span class="button__text">Hello World</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+      
+
+      
+
+      
+
+    </main>
+  </div>
+
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
+
+
+    
+        <script src="/js/copy-code.js"></script>
+    
+
+    
+        <script src="/js/motion.js"></script>
+    
+
+
+
+    </body>
+</html>

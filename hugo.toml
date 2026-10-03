@@ -1,0 +1,85 @@
+baseURL      = "http://localhost:1313/"
+title        = "Saeed"
+languageCode = "en-us"
+theme        = "hello-friend-ng"
+pagination.pagerSize = 10
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
+
+  homeSubtitle = "Embedded Linux Engineer, fucking with systems"
+  disableReadOtherPosts = false
+  enableSharingButtons  = false
+  enableGlobalLanguageMenu = false
+
+  EnableThemeToggle = true
+
+  description = "Personal tech blog"
+  keywords    = "embedded linux, yocto, secure boot, op-tee"
+
+  customCSS = ["/css/custom.css"]
+  customJS  = ["/js/copy-code.js", "/js/motion.js"]
+
+  [params.portrait]
+    path     = "/img/me.jpg"
+    alt      = "Portrait of Saeed"
+    maxWidth = "160px"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/saeedvft"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/saeed-nourian"
+
+  [[params.social]]
+    name = "email"
+    url  = "mailto:saeednourian82@gmail.com"
+
+  [[params.social]]
+    name = "gitlab"
+    url  = "https://gitlab.com/your-username"
+
+  [[params.social]]
+    name = "telegram"
+    url  = "https://t.me/saeedvft"
+
+  [[params.social]]
+    name = "rss"
+    url  = "/index.xml"
+
+
+# Avoids a known empty-taxonomy rendering bug in this theme
+[taxonomies]
+  tag      = "tags"
+  category = "categories"
+
+[languages]
+  [languages.en]
+    title = "Saeed"
+    copyright = "© 2026 Saeed"
+
+  [languages.en.params]
+    subtitle = "Embedded Linux, secure boot, and things I break on dev boards"
+
+    [languages.en.params.logo]
+      logoText     = "Saeedvft"
+      logoHomeLink = "/"
+
+[[menu.main]]
+  identifier = "blog"
+  name       = "Blog"
+  url        = "/posts"
+
+[[menu.main]]
+  identifier = "about"
+  name       = "About"
+  url        = "/about"
+
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel   = 3

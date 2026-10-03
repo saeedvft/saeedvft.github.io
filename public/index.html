@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta name="generator" content="Hugo 0.123.7"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38391&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Embedded Linux Engineer, fucking with systems" />
+<meta name="keywords" content="embedded linux, yocto, secure boot, op-tee" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:38391/" />
+
+
+    <title>
+        
+            Saeed  — Embedded Linux, secure boot, and things I break on dev boards 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.9acb40be0cd10472e74602beaacd5d0f30d54c51308dbfe8095191e6941a3ec3.css" integrity="sha256-mstAvgzRBHLnRgK&#43;qs1dDzDVTFEwjb/oCVGR5pQaPsM=" crossorigin="anonymous">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Saeed">
+<meta itemprop="description" content="Personal tech blog">
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Saeed"/>
+<meta name="twitter:description" content="Personal tech blog"/>
+
+
+
+
+
+
+
+
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:38391/index.xml" title="Saeed" />
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+    <body class="">
+
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                Saeedvft</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner">
+                <li><a href="/about">About</a></li>
+            
+                <li><a href="/posts">Blog</a></li>
+            
+    </ul>
+</nav>
+
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            
+    <div class="content-center">
+        <main>
+            <div>
+                
+                <img src="/img/me.jpg" class="circle" alt="Portrait of Saeed" style="max-width:160px" />
+                
+
+                <h1>Saeed</h1>
+
+                
+    <p>Embedded Linux Engineer, fucking with systems</p>
+                    <div>
+                        &nbsp; <a href="https://github.com/saeedvft"  rel="me noopener " title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a> &nbsp;&nbsp; <a href="https://www.linkedin.com/in/saeed-nourian"  rel="me noopener " title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a> &nbsp;&nbsp; <a href="mailto:saeednourian82@gmail.com"  rel="me noopener " title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a> &nbsp;&nbsp; <a href="https://gitlab.com/your-username"  rel="me noopener " title="Gitlab"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z"></path></svg></a> &nbsp;&nbsp; <a href="https://t.me/saeedvft"  rel="me noopener " title="Telegram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></a> &nbsp;&nbsp; <a href="/index.xml"  rel="me noopener " title="Rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="currentColor" stroke="none"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/></svg></a> &nbsp;
+                    </div>
+            </div>
+        </main>
+    </div>
+
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
+
+
+    
+        <script src="/js/copy-code.js"></script>
+    
+
+    
+        <script src="/js/motion.js"></script>
+    
+
+
+
+    </body>
+</html>

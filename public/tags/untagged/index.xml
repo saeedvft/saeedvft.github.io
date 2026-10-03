@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Untagged on Saeed</title>
+    <link>http://localhost:38391/tags/untagged/</link>
+    <description>Recent content in Untagged on Saeed</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2026 Saeed</copyright>
+    <lastBuildDate>Sat, 19 Sep 2026 00:33:01 +0330</lastBuildDate>
+    <atom:link href="http://localhost:38391/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>http://localhost:38391/posts/hello-world/</link>
+      <pubDate>Sat, 19 Sep 2026 00:33:01 +0330</pubDate>
+      <guid>http://localhost:38391/posts/hello-world/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:38391/posts/</loc>
+    <lastmod>2026-09-19T12:00:00+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:38391/</loc>
+    <lastmod>2026-09-19T12:00:00+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:38391/tags/secure-boot/</loc>
+    <lastmod>2026-09-19T12:00:00+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:38391/posts/sample-post/</loc>
+    <lastmod>2026-09-19T12:00:00+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:38391/tags/</loc>
+    <lastmod>2026-09-19T12:00:00+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:38391/tags/u-boot/</loc>
+    <lastmod>2026-09-19T12:00:00+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:38391/tags/yocto/</loc>
+    <lastmod>2026-09-19T12:00:00+03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:38391/about/</loc>
+    <lastmod>2026-09-19T00:33:06+03:30</lastmod>
+  </url><url>
+    <loc>http://localhost:38391/posts/hello-world/</loc>
+    <lastmod>2026-09-19T00:33:01+03:30</lastmod>
+  </url><url>
+    <loc>http://localhost:38391/tags/untagged/</loc>
+    <lastmod>2026-09-19T00:33:01+03:30</lastmod>
+  </url><url>
+    <loc>http://localhost:38391/categories/</loc>
+  </url>
+</urlset>
