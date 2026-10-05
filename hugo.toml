@@ -18,7 +18,7 @@ pagination.pagerSize = 10
   EnableThemeToggle = true
 
   description = "Personal tech blog"
-  keywords    = "embedded linux, yocto, secure boot, op-tee"
+  keywords    = "embedded linux, yocto"
 
   customCSS = ["/css/custom.css", "/css/blog.css"]
   customJS  = ["/js/copy-code.js", "/js/motion.js"]
@@ -64,7 +64,7 @@ pagination.pagerSize = 10
     copyright = "© 2026 Saeed"
 
   [languages.en.params]
-    subtitle = "Embedded Linux, secure boot, and things I break on dev boards"
+    subtitle = "Embedded Linux Engineer"
 
     [languages.en.params.logo]
       logoText     = "Saeedvft"
