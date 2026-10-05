@@ -14,7 +14,7 @@
       <link>http://localhost:1313/posts/sample2/</link>
       <pubDate>Sat, 03 Oct 2026 10:00:00 +0200</pubDate>
       <guid>http://localhost:1313/posts/sample2/</guid>
-      <description>Introduction Write a brief introduction here. Hook the reader and explain what this post will cover.&#xA;Main Section This is where your main content goes. You can use:&#xA;Bold text for emphasis Italic text for subtle emphasis Links to other resources Subsection Add more details here. For example, a code block:&#xA;hugo server -D </description>
+      <description>Introduction Write a brief introduction here. Hook the reader and explain what this post will cover.&#xA;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis purus, feugiat eu bibendum eget, lobortis in purus. Pellentesque rutrum ut mi a tempus. Nullam pulvinar faucibus nisl sit amet iaculis. Quisque lectus mauris, ullamcorper vitae neque vel, eleifend egestas tellus. Curabitur eu nulla luctus, convallis orci a, dignissim nisi. Suspendisse id libero eu libero sodales suscipit.</description>
     </item>
     <item>
       <title>Signing a FIT Image for Secure Boot</title>
