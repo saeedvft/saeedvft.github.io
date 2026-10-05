@@ -4,27 +4,6 @@ date = 2026-09-19T00:33:06+03:30
 draft = false
 +++
 
-Hi, I'm Saeed. I'm an embedded Linux and BSP engineer, and a student at Iran University of Science and Technology (IUST).
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse volutpat nunc vitae nibh finibus porta. Cras accumsan dapibus feugiat. Morbi odio sapien, interdum sed rhoncus id, rutrum in dui. Sed pellentesque consectetur erat vitae ultricies. Aliquam faucibus ultrices sapien a malesuada. Duis a odio iaculis nibh aliquam scelerisque. Sed ullamcorper neque lectus, et suscipit erat pharetra interdum. Nullam rhoncus lobortis est. Duis eu erat quis justo egestas luctus eu at odio. Curabitur accumsan quam sit amet gravida venenatis. Sed feugiat commodo magna ac volutpat. Mauris nec ex quis nibh mollis fringilla. Cras eget diam eu erat aliquam dapibus. Morbi laoreet pharetra ultrices. Phasellus ac neque nec neque malesuada placerat.
 
-## What I do
-
-I bring up and harden Linux on Rockchip boards, mostly the **RK3588 / RK3588S** and **RK3576**, on Firefly hardware (AIO-3588Q, ROC-RK3588S-PC, AIO-3576Q). My images are built with **Yocto**: a custom layer on top of `meta-rockchip`, on Poky Scarthgap.
-
-## What I'm into
-
-- **Secure boot**: signing FIT images and wiring up the verification chain
-- **OP-TEE**: writing trusted and client applications from scratch
-- **Full-disk encryption**: LUKS, with keys unlocked through OP-TEE from the initramfs
-- **Low-level bring-up**: RTOS and AMP setups next to Linux, plus the odd hardware mystery on a dev board
-- **On the side**: Go projects and some machine learning on the NPU
-
-## About this blog
-
-This is where I write down the things I had to figure out the hard way, mostly secure boot, Yocto and board bring-up notes. If a post saves you an afternoon, it did its job.
-
-## Get in touch
-
-- Email: [saeednourian82@gmail.com](mailto:saeednourian82@gmail.com)
-- GitHub: [saeedvft](https://github.com/saeedvft)
-- LinkedIn: [saeed-nourian](https://www.linkedin.com/in/saeed-nourian)
-- Telegram: [@saeedvft](https://t.me/saeedvft)
+Integer fermentum velit sit amet volutpat porttitor. In fermentum congue mauris in finibus. Aliquam erat volutpat. Proin viverra vulputate justo eu scelerisque. Donec eu justo nulla. Nullam vehicula aliquet purus ut euismod. Duis imperdiet magna non magna feugiat, vitae suscipit dolor lobortis. Mauris molestie porttitor posuere. Aenean imperdiet sodales dolor, a aliquam velit varius ac. Phasellus porta nisi vel tortor ultrices consequat. Duis vehicula sapien erat, ut porta sapien euismod ac. Duis sit amet rutrum nibh. Donec pulvinar nulla a diam placerat, et tempor mauris hendrerit. Etiam ac consectetur elit. In. 
