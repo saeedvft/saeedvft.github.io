@@ -83,3 +83,6 @@ pagination.pagerSize = 10
 [markup.tableOfContents]
   startLevel = 2
   endLevel   = 3
+[services]
+  [services.googleAnalytics]
+    id = 'G-TE8EQFN250'
