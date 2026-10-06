@@ -12,10 +12,10 @@ pagination.pagerSize = 10
 
   homeSubtitle = "Embedded Linux Engineer, fucking with systems"
   disableReadOtherPosts = false
-  enableSharingButtons  = false
+  enableSharingButtons  = true
   enableGlobalLanguageMenu = false
 
-  EnableThemeToggle = true
+  EnableThemeToggle = false
 
   description = "Personal tech blog"
   keywords    = "embedded linux, yocto"
@@ -41,17 +41,8 @@ pagination.pagerSize = 10
     url  = "mailto:saeednourian82@gmail.com"
 
   [[params.social]]
-    name = "gitlab"
-    url  = "https://gitlab.com/your-username"
-
-  [[params.social]]
     name = "telegram"
     url  = "https://t.me/saeedvft"
-
-  [[params.social]]
-    name = "rss"
-    url  = "/index.xml"
-
 
 # Avoids a known empty-taxonomy rendering bug in this theme
 [taxonomies]
