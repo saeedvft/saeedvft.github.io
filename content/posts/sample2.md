@@ -1,6 +1,6 @@
 +++
 date = '2026-10-03T10:00:00+02:00'
-draft = true
+draft = false
 title = 'My First Post'
 tags = ['hugo', 'blogging', 'getting-started']
 categories = ['Tutorials']
