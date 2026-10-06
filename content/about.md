@@ -4,8 +4,6 @@ date = 2026-09-19T00:33:06+03:30
 draft = false
 +++
 
-# About Me
-
 Hi! I'm Saeed Nourian; an **Embedded Linux Engineer** — which is a fancy way of saying I spend my days convincing stubborn silicon to run Linux, and my nights wondering why it stopped.
 
 I work somewhere between hardware and software, where a small change can fix everything, break everything, or somehow do both. I enjoy getting close to the system, understanding what's actually happening under the hood, and figuring out why something that *should* work decided otherwise.
