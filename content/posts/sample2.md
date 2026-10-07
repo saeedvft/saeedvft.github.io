@@ -10,7 +10,7 @@ description = 'A short summary of what this post is about.'
 
 ## Introduction
 
-Write a brief introduction here. Hook the reader and explain what this post will cover.
+Placeholder for a brief introduction here. Hook the reader and explain what this post will cover.
 
 
 
@@ -32,7 +32,7 @@ Aenean magna turpis, faucibus non consectetur quis, dictum nec nunc. Suspendisse
 
 ## Main Section
 
-This is where your main content goes. You can use:
+Main content section. can use:
 
 - **Bold text** for emphasis
 - *Italic text* for subtle emphasis
@@ -40,7 +40,7 @@ This is where your main content goes. You can use:
 
 ### Subsection
 
-Add more details here. For example, a code block:
+More details here. For example, a code block:
 
 ```bash
 hugo server -D
