@@ -10,7 +10,7 @@ pagination.pagerSize = 10
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
 
-  homeSubtitle = "Embedded Linux Engineer, fucking with systems"
+  homeSubtitle = "Embedded Linux Engineer, breaking and rebuilding systems"
   disableReadOtherPosts = false
   enableSharingButtons  = true
   enableGlobalLanguageMenu = false
