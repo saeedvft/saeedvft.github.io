@@ -5,10 +5,9 @@ title = 'The 64-Byte Difference Between uImage and zImage'
 tags = ['u-boot', 'zImage', 'uImage']
 categories = ['Tutorials']
 author = 'Saeed Nourian'
-description = 'Comparing two common kernel images.'
+description = 'Both are kernel images. The "u" describes the container format, not the contents.'
 +++
 
-# uImage vs zImage: Kernel Images, Not Bootloaders — Here's the Difference
 
 If you've spent any time in embedded Linux, you've run into `zImage` and `uImage`. You've probably also seen `u-boot.bin` sitting right next to them in the same directory, which leads to a very common question:
 
@@ -16,7 +15,6 @@ If you've spent any time in embedded Linux, you've run into `zImage` and `uImage
 
 Short answer: **They're both kernel images.** The "u" in uImage is misleading — it refers to the format, not the contents. Let's break it down properly.
 
----
 
 ## The Two Files at a Glance
 
@@ -28,7 +26,6 @@ Short answer: **They're both kernel images.** The "u" in uImage is misleading �
 
 So when you see `uImage` in your boot partition, that's the kernel U-Boot will load — not U-Boot.
 
----
 
 ## What Is a zImage?
 
@@ -42,7 +39,6 @@ make ARCH=arm zImage
 
 No extra tooling required. The kernel build system produces it directly.
 
----
 
 ## What Is a uImage?
 
@@ -66,7 +62,6 @@ That command prepends a **64-byte header** containing metadata:
 
 The header exists purely so the bootloader can parse the image before jumping into it.
 
----
 
 ## The Key Insight: Strip the Header, Get a zImage
 
@@ -74,7 +69,6 @@ If you start executing a uImage at **offset 64** — skipping the header — it 
 
 This is why the file sizes differ by exactly 64 bytes.
 
----
 
 ## Why Do Both Exist?
 
@@ -92,7 +86,6 @@ Newer U-Boot versions added the `bootz` command, which boots a zImage **directly
 - It's simpler and less error-prone.
 - It's the **only option for ARM64** — the kernel build system no longer supports generating uImages for 64-bit ARM at all.
 
----
 
 ## The Naming Confusion, Explained
 
@@ -113,7 +106,6 @@ file uImage
 
 The `file` utility confirms it: kernel payload, U-Boot container.
 
----
 
 ## Which One Should You Use?
 
@@ -126,5 +118,4 @@ The `file` utility confirms it: kernel payload, U-Boot container.
 
 **So a Rule of thumb:** If your bootloader supports `bootz`, use zImage and skip `mkimage` entirely. If it doesn't, you're on old U-Boot and you need a uImage.
 
----
 

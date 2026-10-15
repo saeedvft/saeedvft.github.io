@@ -41,7 +41,7 @@
 @@ .post-content pre code { padding:0; background:none; border:0; }
 @@ .post-content :not(pre) > code { padding:.12em .45em; background:rgba(163,190,140,.16); border:0; border-radius:6px; color:#b6dce6; font-size:.86em; }
 
-@@ .post-content table { width:100%; margin:1.7rem 0; border-collapse:separate; border-spacing:0; font-size:.92rem; border:1px solid #434c5e; border-radius:12px; overflow:hidden; }
+@@ .post-content table { width:100%; display:table; margin:1.7rem 0; border-collapse:separate; border-spacing:0; font-size:.92rem; border:1px solid #434c5e; border-radius:12px; overflow:hidden; }
 @@ .post-content th, @@ .post-content td { padding:.7rem 1rem; border:0; border-bottom:1px solid #434c5e; text-align:left; }
 @@ .post-content th { background:rgba(255,255,255,.06); color:#eceff4; }
 @@ .post-content tr:last-child td { border-bottom:0; }
@@ -69,3 +69,4 @@
 }
 /* your own copy button stays top-right */
 @@ .post-content pre .copy-btn { top:.6rem; right:.7rem; }
+@@ .post-content :is(pre, code, pre *, code *) { text-shadow:none !important; }
